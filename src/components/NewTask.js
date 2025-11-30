@@ -7,7 +7,7 @@ export const NewTask = () =>{
     const [priority,setPriority] = useState("");
     const [date,setDate] = useState("");
     const [taskList,setTaskList] = useState([]);
-    const [itemId, setitemid] = useState(0);
+    const [itemId, setItemId] = useState(0);
 
     const handleTask = (e) =>{
         setTask(e.target.value);
@@ -19,17 +19,18 @@ export const NewTask = () =>{
         setDate(e.target.value);
     }
     const handleSubmit = (e) =>{
-        setitemid(itemId + 1);
+        //setItemId(itemId + 1);
         let taskCurr = {
-            id : itemId,
+            id : crypto.randomUUID(),
             task,
             priority,
             date
         }
         setTaskList([taskCurr,...taskList]);
+        
     }
     const deleteRow = (id) =>{
-        setTaskList(taskList.filter(item=>item.id!==id))
+        setTaskList(taskList.filter(item=>item.id!==id));
     }
 
     return(
