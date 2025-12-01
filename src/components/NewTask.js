@@ -35,15 +35,15 @@ export const NewTask = () =>{
 
     return(
     <div className="centered">
-        <div className='row1'><h2>ToDo</h2></div>
+       <div className='pageHeading'>TODO</div>
     <div className="row1">
-      <input type="text" value={task} onChange={handleTask}></input>
-      <input type="text" value={priority} onChange={handlepriority}></input>
-      <input type="date" value={date} onChange={handleDate}></input>
+      <input type="text" value={task} onChange={handleTask} className='inputBox'></input>
+      <input type="text" value={priority} onChange={handlepriority} className='inputBox'></input>
+      <input type="date" value={date} onChange={handleDate} className='inputBox'></input>
     </div>
-    <div className='row1'><button onClick={handleSubmit}>Add</button></div>
-    <div className="tableStyle">
-        <table>
+    <div className='row1'><button onClick={handleSubmit} className = 'addButton'>Add</button></div>
+    <div>
+        <table className='tableStyle'>
             <thead>
                             <tr>
                                 <th>Task</th>
@@ -60,7 +60,7 @@ export const NewTask = () =>{
             <td>{t.task}</td>
             <td>{t.priority}</td>
             <td>{t.date}</td>
-            <td><button onClick={()=>deleteRow(t.id)}>Delete</button></td>
+            <td><button onClick={()=>deleteRow(t.id)} className='deleteBtn'>❌</button></td>
             </tr>
             // </div>
         ))}
